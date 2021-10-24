@@ -81,19 +81,29 @@ function crearID () {
 // EJERCICIO 2
 
 /*
-  TODO: metodo que elimina la lista previamente pintada en el contenedor asignado 
+  Metodo que elimina la lista previamente pintada en el contenedor asignado 
   para pintar socios, recorre el array con un bucle y pinta los socios 
 */
 function pintarListaSocios () {
-  //TODO: borramos todo lo que hay en el div
-  //TODO: bucle para recorrer y pintar el array de socios
-  //TODO: debemos añadir los socios a la pagina web
+  var sociosStr = "<ul>";
+
+  // Borramos todo lo que hay en el div
+  contenedorEscribirSocios.innerHTML = "";
+
+  // Bucle para recorrer y pintar el array de socios
+  socios.forEach(socio => {
+    sociosStr += "<li>Socio numero " + socio.id + ": " + socio.nombre + " " + socio.apellido + "</li>";
+  });
+
+  sociosStr += "</ul>";
+
+  // Debemos añadir los socios a la pagina web
+  contenedorEscribirSocios.innerHTML = sociosStr;
 }
 
 // ------------------- MAIN ------------------------
 
-// TODO: añadimos los socios iniciales cuando empieza el programa
-
+// Añadimos los socios iniciales cuando empieza el programa
 aniadirSociosInicialesArray();
 
 console.log('Acaba el programa')
